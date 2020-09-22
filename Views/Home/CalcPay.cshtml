@@ -1,0 +1,47 @@
+﻿
+
+@model DetectiveAgency.Models.Employee
+@{
+    ViewBag.Title = "New Employee Form";
+
+}
+<div class="row">
+    <h1 class="col-md-12"> New Employee Form</h1>
+    <form asp-action="Index" method="post" class="col-md-6">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div>
+            <label asp-for="ID">ID:</label>
+            <input asp-for="ID" />
+        </div>
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input asp-for="Name" />
+        </div>
+        <div>
+            <label asp-for="Hours">Hours:</label>
+            <input asp-for="Hours" />
+        </div>
+        <div>
+            <label asp-for="Rate">Rate</label>
+            <input asp-for="Rate" />
+        </div>
+        <div>
+            <label>Weekly Gross Pay:</label>
+            <input value="@ViewBag.Salary.ToString("C2")" readonly>
+        </div>
+        <button asp-controller="Home">Calculate Grosss Pay</button>
+        <button asp-action="Index">Clear</button>
+    </form>
+   
+</div>
+
+
+
+
+
+
+
+
+
+
+
